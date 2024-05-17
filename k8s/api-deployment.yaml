@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: ms-auth-container
-        image: dealmachine/auth-api:5
+        image: dealmachine/auth-api:6
         workingDir: /usr/auth/api
         ports:
         - containerPort: 3000
