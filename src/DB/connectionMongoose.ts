@@ -10,8 +10,9 @@ const DB_SERVER = process.env.DB_SERVER || '';
 
 const mongooseConnection = (): Promise<typeof mongoose> => {
     mongoose.Promise = global.Promise;
-    return mongoose.connect(`mongodb+srv://${DB_USER}:${DB_PASSWORD}${DB_SERVER}/${DB_DATABASE}?retryWrites=true&w=majority`)
-
+    const uri = `mongodb+srv://${DB_USER}:${DB_PASSWORD}${DB_SERVER}/${DB_DATABASE}?retryWrites=true&w=majority`
+    console.log('\n', uri, '\n')    
+    return mongoose.connect(uri)
 }
 
 export default mongooseConnection;
