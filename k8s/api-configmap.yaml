@@ -11,3 +11,5 @@ data:
   DB_SERVER: "${DB_SERVER}"
   JWT_KEY: "${TOKEN_SECRET}"
   BCRYPT_COST: "12"
+  AUTH_URL: http://kong-service:8001
+  CONSUMER: "orderly"

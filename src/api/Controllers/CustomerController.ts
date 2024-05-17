@@ -21,11 +21,11 @@ export const auth = async (
       return res.status(400).json({ error: 'Invalid CPF.' });
     }
 
-    const url = `${process.env.AUTH_URL}consumers/${process.env.CONSUMER}/jwt`;
+    const url = `${process.env.AUTH_URL}/consumers/${process.env.CONSUMER}/jwt`;
     const { data: response } = await axios.get(url);
     const [{ key, secret }] = response.data;
 
-    const result = await CustomerServices.auth({ cpf });
+    await CustomerServices.auth({ cpf });
 
     const payload = { isCPFValid };
     const token = generateToken(payload, secret, key);
