@@ -46,7 +46,7 @@ jobs:
           DB_SERVER: ${{ secrets.DB_SERVER }}
           DB_USER: ${{ vars.DB_USERNAME }}
           DB_DATABASE: ${{ vars.DB_NAME }}
-          JWT_KEY: ${{ secrets.TOKEN_SECRET }}
+          TOKEN_SECRET: ${{ secrets.TOKEN_SECRET }}
 
       - name: apply auth api
         run: |
