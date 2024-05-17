@@ -4,7 +4,7 @@
   "description": "",
   "main": "./bin/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cucumber-js --require-module ts-node/register",
     "start": "cross-env NODE_ENV=production node dist/index",
     "dev": "cross-env NODE_ENV=development nodemon --exec ts-node index.ts",
     "build": "tsc",
@@ -30,11 +30,19 @@
     "uuidv4": "^6.2.13"
   },
   "devDependencies": {
+    "@cucumber/cucumber": "^10.7.0",
+    "@types/chai": "^4.3.16",
     "@types/cors": "^2.8.15",
     "@types/express": "^4.17.20",
     "@types/jsonwebtoken": "^9.0.4",
+    "@types/mocha": "^10.0.6",
     "@types/node": "^20.8.7",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.2.2"
+    "@types/supertest": "^6.0.2",
+    "chai": "^5.1.1",
+    "cucumber": "^6.0.7",
+    "mocha": "^10.4.0",
+    "supertest": "^7.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
   }
 }
