@@ -5,7 +5,7 @@
   "main": "./bin/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cross-env NODE_ENV=production node dist/index.js",
+    "start": "cross-env NODE_ENV=production node dist/index",
     "dev": "cross-env NODE_ENV=development nodemon --exec ts-node index.ts",
     "build": "tsc",
     "utils": "nodemon ./src/utils/formatDate.js",
