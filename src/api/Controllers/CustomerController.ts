@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import * as CustomerServices from "../services/CustomerServices";
 import { generateToken } from "../../utils/TokenGenerator";
 import { isValidCPF } from "../../utils/helper";
+import axios from "axios";
 
 export const auth = async (
   req: Request,
@@ -20,10 +21,17 @@ export const auth = async (
       return res.status(400).json({ error: 'Invalid CPF.' });
     }
 
+    const url = `${process.env.AUTH_URL}consumers/${process.env.CONSUMER}/jwt`;
+    const { data: response } = await axios.get(url);
+    const [{ key, secret }] = response.data;
+
     const result = await CustomerServices.auth({ cpf });
 
+    const payload = { isCPFValid };
+    const token = generateToken(payload, secret, key);
+
     res.status(200).send({
-      token: generateToken(result.cpf),
+      token: token,
     });
   } catch (error: any) {
     res.status(400).send({ message: error.message });
