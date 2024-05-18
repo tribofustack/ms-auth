@@ -4,12 +4,13 @@
   "description": "",
   "main": "./bin/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env NODE_ENV=production node dist/index",
     "dev": "cross-env NODE_ENV=development nodemon --exec ts-node index.ts",
     "build": "tsc",
     "utils": "nodemon ./src/utils/formatDate.js",
-    "serverapp": "nodemon ./bin/server.js"
+    "serverapp": "nodemon ./bin/server.js",
+    "test": "cross-env NODE_ENV=test jest --runInBand  --logHeapUsage",
+    "test:coverage": "cross-env NODE_ENV=test jest --collectCoverage --runInBand --logHeapUsage"
   },
   "keywords": [],
   "author": "",
@@ -34,6 +35,9 @@
     "@types/express": "^4.17.20",
     "@types/jsonwebtoken": "^9.0.4",
     "@types/node": "^20.8.7",
+    "@types/jest": "^29.5.2",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   }
