@@ -1,30 +1,13 @@
-const { Given, When, Then, Before, After, setDefaultTimeout } = require('@cucumber/cucumber');
-const http = require('http');
+const { Given, When, Then } = require('@cucumber/cucumber');
 const request = require('supertest');
-const app = require('../../src/app').default; 
+const dotenv = require('dotenv')
 
-let server;
+dotenv.config({
+  path: ".env",
+});
+
 let response;
 let cpf;
-
-setDefaultTimeout(10000);
-
-Before(() => {
-  return new Promise((resolve) => {
-    server = http.createServer(app);
-    server.listen(0, () => {
-      resolve();
-    });
-  });
-});
-
-After(() => {
-  return new Promise((resolve) => {
-    server.close(() => {
-      resolve();
-    });
-  });
-});
 
 Given('a user with CPF {string}', (cpfInput) => {
   cpf = cpfInput;
@@ -33,8 +16,7 @@ Given('a user with CPF {string}', (cpfInput) => {
 When('the user sends a POST request to {string}', async (endpoint) => {
   const chai = await import('chai');
   const { expect } = chai;
-  console.log('server')
-  response = await request(server)
+  response = await request(process.env.BASE_URL)
     .post("/customer/auth")
     .send({ cpf: cpf });
 });

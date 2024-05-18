@@ -10,24 +10,16 @@
         "name": "Authenticate with valid CPF",
         "steps": [
           {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 3176399
-            }
-          },
-          {
             "arguments": [],
             "keyword": "Given ",
             "line": 4,
             "name": "a user with CPF \"41115491873\"",
             "match": {
-              "location": "features\\step_definitions\\authSteps.js:29"
+              "location": "features\\step_definitions\\authSteps.js:12"
             },
             "result": {
               "status": "passed",
-              "duration": 8333000
+              "duration": 7848100
             }
           },
           {
@@ -36,11 +28,11 @@
             "line": 5,
             "name": "the user sends a POST request to \"/customer/auth\"",
             "match": {
-              "location": "features\\step_definitions\\authSteps.js:33"
+              "location": "features\\step_definitions\\authSteps.js:16"
             },
             "result": {
               "status": "passed",
-              "duration": 380977699
+              "duration": 62521200
             }
           },
           {
@@ -49,11 +41,11 @@
             "line": 6,
             "name": "the response should be 200",
             "match": {
-              "location": "features\\step_definitions\\authSteps.js:42"
+              "location": "features\\step_definitions\\authSteps.js:24"
             },
             "result": {
               "status": "passed",
-              "duration": 1831799
+              "duration": 1896600
             }
           },
           {
@@ -62,19 +54,11 @@
             "line": 7,
             "name": "the response should contain a JWT token",
             "match": {
-              "location": "features\\step_definitions\\authSteps.js:48"
+              "location": "features\\step_definitions\\authSteps.js:30"
             },
             "result": {
               "status": "passed",
-              "duration": 1523100
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 460899
+              "duration": 1573300
             }
           }
         ],
@@ -89,24 +73,16 @@
         "name": "Authenticate with invalid CPF",
         "steps": [
           {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 3152399
-            }
-          },
-          {
             "arguments": [],
             "keyword": "Given ",
             "line": 10,
             "name": "a user with CPF \"1\"",
             "match": {
-              "location": "features\\step_definitions\\authSteps.js:29"
+              "location": "features\\step_definitions\\authSteps.js:12"
             },
             "result": {
               "status": "passed",
-              "duration": 7929099
+              "duration": 7761799
             }
           },
           {
@@ -115,11 +91,11 @@
             "line": 11,
             "name": "the user sends a POST request to \"/customer/auth\"",
             "match": {
-              "location": "features\\step_definitions\\authSteps.js:33"
+              "location": "features\\step_definitions\\authSteps.js:16"
             },
             "result": {
               "status": "passed",
-              "duration": 36814500
+              "duration": 35426999
             }
           },
           {
@@ -128,11 +104,11 @@
             "line": 12,
             "name": "the response should be 400",
             "match": {
-              "location": "features\\step_definitions\\authSteps.js:42"
+              "location": "features\\step_definitions\\authSteps.js:24"
             },
             "result": {
               "status": "passed",
-              "duration": 1769500
+              "duration": 1849599
             }
           },
           {
@@ -141,19 +117,11 @@
             "line": 13,
             "name": "the response should contain an error message \"Invalid CPF.\"",
             "match": {
-              "location": "features\\step_definitions\\authSteps.js:54"
+              "location": "features\\step_definitions\\authSteps.js:36"
             },
             "result": {
               "status": "passed",
-              "duration": 3103599
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 506300
+              "duration": 2960700
             }
           }
         ],
@@ -168,24 +136,16 @@
         "name": "Authenticate with empty CPF",
         "steps": [
           {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 605699
-            }
-          },
-          {
             "arguments": [],
             "keyword": "Given ",
             "line": 16,
             "name": "a user with CPF \"\"",
             "match": {
-              "location": "features\\step_definitions\\authSteps.js:29"
+              "location": "features\\step_definitions\\authSteps.js:12"
             },
             "result": {
               "status": "passed",
-              "duration": 207300
+              "duration": 227600
             }
           },
           {
@@ -194,11 +154,11 @@
             "line": 17,
             "name": "the user sends a POST request to \"/customer/auth\"",
             "match": {
-              "location": "features\\step_definitions\\authSteps.js:33"
+              "location": "features\\step_definitions\\authSteps.js:16"
             },
             "result": {
               "status": "passed",
-              "duration": 4343899
+              "duration": 3092399
             }
           },
           {
@@ -207,11 +167,11 @@
             "line": 18,
             "name": "the response should be 400",
             "match": {
-              "location": "features\\step_definitions\\authSteps.js:42"
+              "location": "features\\step_definitions\\authSteps.js:24"
             },
             "result": {
               "status": "passed",
-              "duration": 410800
+              "duration": 292099
             }
           },
           {
@@ -220,19 +180,11 @@
             "line": 19,
             "name": "the response should contain an error message \"CPF is required.\"",
             "match": {
-              "location": "features\\step_definitions\\authSteps.js:54"
+              "location": "features\\step_definitions\\authSteps.js:36"
             },
             "result": {
               "status": "passed",
-              "duration": 430700
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 297899
+              "duration": 436199
             }
           }
         ],
