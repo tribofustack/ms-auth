@@ -1,8 +1,8 @@
-import { auth } from '../src/api/services/CustomerServices'; // ajuste o caminho conforme necessário
-import Customers from '../src/api/models/customer';
-import { authInputDTO } from '../src/api/interfaces/customer/interfaces';
+import { auth } from '../../src/api/services/CustomerServices';
+import Customers from '../../src/api/models/customer';
+import { authInputDTO } from '../../src/api/interfaces/customer/interfaces';
 
-jest.mock('../src/api/models/customer'); // mocka o modelo Customers
+jest.mock('../../src/api/models/customer'); 
 
 describe('auth', () => {
   afterEach(() => {
