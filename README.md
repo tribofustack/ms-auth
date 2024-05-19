@@ -7,8 +7,17 @@
 </p>
 
 ## 💻 Project
+Auth Microservice
+Overview
 
-Orderly is a cutting-edge web system designed to streamline operations for restaurant and food businesses (RMS). It draws from the principles of **Domain-Driven Design (DDD)** and **Architectural Concepts** to ensure scalability, maintainability, and a robust integration capability.
+The Auth microservice is designed to handle authentication by generating tokens. It provides a backend route to facilitate the secure authentication of users within the service.
+Key Features
+
+    Generate Authentication Token: Issues a token for users to authenticate and gain access to the service.
+
+Backend Routes
+
+- [Postman Public Collection](https://documenter.getpostman.com/view/13574011/2s9YsM8WDL)
 
 ## ✨ Quality
 
