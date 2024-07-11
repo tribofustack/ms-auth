@@ -37,3 +37,28 @@ export const auth = async (
     res.status(400).send({ message: error.message });
   }
 };
+
+export const deleteCustomer = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const { cpf } = req.body;
+
+    if (!cpf) {
+      return res.status(400).json({ error: 'CPF is required.' });
+    }
+
+    const isCPFValid = isValidCPF(cpf);
+    if (!isCPFValid) {
+      return res.status(400).json({ error: 'Invalid CPF.' });
+    }
+
+    const response = await CustomerServices.deleteCustomer({ cpf });
+
+    res.status(200).send({ message: response });
+  } catch (error: any) {
+    res.status(400).send({ message: error.message });
+  }
+};
