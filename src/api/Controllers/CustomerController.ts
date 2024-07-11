@@ -50,11 +50,6 @@ export const deleteCustomer = async (
       return res.status(400).json({ error: 'CPF is required.' });
     }
 
-    const isCPFValid = isValidCPF(cpf);
-    if (!isCPFValid) {
-      return res.status(400).json({ error: 'Invalid CPF.' });
-    }
-
     const response = await CustomerServices.deleteCustomer({ cpf });
 
     res.status(200).send({ message: response });
