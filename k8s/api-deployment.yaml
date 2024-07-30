@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
       - name: ms-auth-container
-        image: dealmachine/auth-api:6
+        image: dealmachine/auth-api:latest
+        imagePullPolicy: Always
         workingDir: /usr/auth/api
         ports:
         - containerPort: 3000
