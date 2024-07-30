@@ -7,3 +7,10 @@ export type authOutputDTO = {
   cpf: string,
 };
 
+export type deleteInputDTO = {
+  cpf: string;
+};
+
+export type deleteOutputDTO = {
+  message: string,
+};
